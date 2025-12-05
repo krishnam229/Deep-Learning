@@ -123,3 +123,12 @@ Once trained, predictions were generated using:
 
 ```python
 model.predict()
+
+
+## 📈 Results Summary (Sample)
+
+| Model | Optimizer | LR | Val MSE | Val MAE |
+|-------|-----------|----|---------|---------|
+| Linear Regression | Adam | 0.001 | 0.82 | 0.31 |
+| MLP | RMSprop | 0.001 | 0.56 | 0.24 |
+| DNN | RMSprop | 0.001 | **0.32** | **0.19** |
