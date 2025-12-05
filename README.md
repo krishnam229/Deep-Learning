@@ -1,6 +1,4 @@
----
-
-## 🟢 1 – Exploratory Data Analysis of NYC Yellow Taxi Trips (2020)
+## 🟢 1 – **Exploratory Data Analysis of NYC Yellow Taxi Trips (2020)**
 
 This notebook performs Exploratory Data Analysis (EDA) on NYC Yellow Taxi Trip Records from 2020.  
 The focus is on:
@@ -15,7 +13,7 @@ The focus is on:
 - Identifying important features that would influence **trip duration** and ride-time prediction
 
 
-# 🟢 2 **Deep Learning–Based Prediction of NYC Yellow Taxi Trip Duration Using Weather Data**
+# 🟢 2 – **Deep Learning–Based Prediction of NYC Yellow Taxi Trip Duration Using Weather Data**
 
 This project (CS672 – Introduction to Deep Learning, Fall 2025) focuses on predicting **NYC Yellow Taxi trip duration** using Deep Learning regression models. The dataset combines **TLC Taxi trip records** with **NYC weather data** to improve prediction accuracy through feature enrichment. Multiple neural network architectures are implemented and compared to determine the best-performing model.
 
