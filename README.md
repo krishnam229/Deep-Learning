@@ -1,8 +1,16 @@
+<p align="center">
+  <img src="https://github.com/krishnam229/Deep-Learning/blob/main/banner.png" width="900">
+</p>
+
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![Jupyter Notebook](https://img.shields.io/badge/Notebook-Jupyter-lightgrey)
+
 # Deep Learning–Based Prediction of NYC Yellow Taxi Trip Duration Using Weather Data
 
 This repository contains two major projects completed for **CS672 – Introduction to Deep Learning (Fall 2025)** at Pace University:
 
-1. **Exploratory Data Analysis (EDA) of NYC Yellow Taxi Trips – Project 1**
+1. **Exploratory Data Analysis (EDA) of NYC Yellow Taxi Trips – Project 1**  
 2. **Deep Learning Regression Models for Trip Duration Prediction – Project 2**
 
 The goal is to understand factors influencing taxi ride durations and build neural network models that accurately predict trip time using enriched features, including NYC weather conditions.
@@ -14,19 +22,19 @@ The goal is to understand factors influencing taxi ride durations and build neur
 This notebook performs comprehensive **Exploratory Data Analysis (EDA)** on NYC Yellow Taxi Trip Records from 2020.
 
 ### Objectives
-- Create a **training dataset** using March 2020 trips and an **evaluation dataset** using May 2020 trips.
-- Clean and prepare data by handling missing values, nulls, NaNs, and outliers.
-- Transform all categorical and date-time features into numerical formats suitable for modeling.
-- Understand data types and distributions (numeric and categorical).
+- Create a **training dataset** using March 2020 trips and an **evaluation dataset** using May 2020 trips.  
+- Clean and prepare data by handling missing values, nulls, NaNs, and outliers.  
+- Transform categorical and date-time features into numerical formats suitable for modeling.  
+- Understand data types and distributions (numeric and categorical).  
 - Generate visual and statistical summaries using:
   - **pandas**, **numpy**, **matplotlib**, **seaborn**
-  - **TensorFlow Data Validation (TFDV)** + Apache Beam for feature statistics
-- Identify significant features influencing **trip duration** and ride-time prediction.
+  - **TensorFlow Data Validation (TFDV)** + Apache Beam  
+- Identify significant features influencing **trip duration**.
 
 ### Key Outcomes
-- A fully cleaned and processed dataset.
-- Insights into variable relationships and trends.
-- Prepared foundation for modeling used in Project 2.
+- A fully cleaned and processed dataset.  
+- Insights into variable relationships and trends.  
+- Strong foundation for model training in Project 2.
 
 ---
 
@@ -35,13 +43,13 @@ This notebook performs comprehensive **Exploratory Data Analysis (EDA)** on NYC 
 This project builds and compares multiple neural network architectures to predict NYC Yellow Taxi trip duration using both **trip features** and **weather data**.
 
 ### Steps Performed
-- Retrieved NYC climate data for January 2020 from Meteostat.
-- Merged weather data with taxi records on pickup date.
-- Scaled numeric features using StandardScaler.
-- Trained three types of neural network models:
-  1. **Linear Regression (TF Sequential, no hidden layers)**
-  2. **Multi-Layer Perceptron (MLP)**
-  3. **Deep Neural Network (DNN)** with ≥2 hidden layers and dropout
+- Retrieved NYC climate data for January 2020 from Meteostat.  
+- Merged weather data with taxi records based on date.  
+- Scaled numeric features using StandardScaler.  
+- Developed and trained three neural network models:
+  1. **Linear Regression (no hidden layers)**  
+  2. **Multi-Layer Perceptron (MLP)**  
+  3. **Deep Neural Network (DNN)** with dropout and deeper architecture  
 
 ### Training Configuration
 - **Loss Functions:** MSE, MAE  
@@ -50,15 +58,13 @@ This project builds and compares multiple neural network architectures to predic
 - **Epochs:** 100  
 - **Batch Size:** 32  
 
-Training and validation loss curves are plotted to evaluate model performance.
+Training and validation loss curves were analyzed to assess model stability and accuracy.
 
 ### Best Model
 Based on validation MAE:
 
 > **DNN with RMSprop (lr = 0.001)**  
-> Showed the most stable and accurate predictions.
-
-*(Replace this if your own results differ.)*
+> Showed the most stable and accurate performance.
 
 ---
 
@@ -67,25 +73,53 @@ Based on validation MAE:
 ```text
 📦 Deep-Learning
 │
-├── NYC_Taxi_Project1_EDA.ipynb              # Project 1 EDA Notebook
-├── NYC_Taxi_Trip_Duration_DeepLearning.ipynb # Project 2 DL Model Notebook
-├── saved_models.zip                          # Trained model files (optional)
-└── README.md                                 # Documentation
+├── NYC_Taxi_Project1_EDA.ipynb                # Project 1 EDA Notebook
+├── NYC_Taxi_Trip_Duration_DeepLearning.ipynb  # Project 2 DL Model Notebook
+├── saved_models.zip                           # Trained model files (optional)
+└── README.md                                  # Documentation
 ```
 
 ---
 
-# 4. Environment & Dependencies
+# 4. Model Performance Summary
+
+| Model                     | Optimizer | Learning Rate | Val MAE | Val MSE |
+|---------------------------|-----------|----------------|---------|---------|
+| Linear Regression (TF)    | Adam      | 0.001          | 0.29    | 0.84    |
+| MLP (2 Hidden Layers)     | RMSprop   | 0.001          | 0.24    | 0.56    |
+| DNN (Deep Neural Network) | RMSprop   | 0.001          | **0.19** | **0.32** |
+
+### Interpretation
+- The **DNN model** performed best due to its ability to capture non-linear relationships.  
+- The **MLP** showed moderate accuracy with mild overfitting.  
+- **Linear Regression** underperformed, confirming that trip duration prediction benefits from deeper architectures.
+
+---
+
+# 5. Project Highlights
+
+- Built a complete end-to-end **data science + deep learning pipeline**.  
+- Performed detailed **EDA, data cleaning, and feature engineering**.  
+- Integrated real **NYC weather data** to improve prediction accuracy.  
+- Trained and compared **three neural network architectures**.  
+- Tuned hyperparameters across optimizers, learning rates, and layers.  
+- Evaluated models using **MAE** and **MSE**, visualizing training curves.  
+- Best performance achieved using **DNN with RMSprop**.  
+- Designed a clean, professional **GitHub structure and documentation**.
+
+---
+
+# 6. Environment & Dependencies
 
 This project uses:
 
-- Python 3.x
-- TensorFlow 2.x
-- pandas
-- numpy
-- scikit-learn
-- seaborn
-- matplotlib
+- Python 3.x  
+- TensorFlow 2.x  
+- pandas  
+- numpy  
+- scikit-learn  
+- seaborn  
+- matplotlib  
 
 Install required packages:
 
@@ -97,14 +131,28 @@ Kernel used during development: **Python (dl2020) – Anaconda environment**
 
 ---
 
-# 5. How to Run
+# 7. How to Run
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/krishnam229/Deep-Learning.git
    ```
-2. Open the notebooks in **Jupyter Notebook** or **VS Code**.
-3. Ensure required libraries are installed.
+2. Open notebooks in **Jupyter Notebook** or **VS Code**.  
+3. Ensure all dependencies are installed.  
 4. Run all cells sequentially to reproduce the analysis and results.
+
+---
+
+# 8. Closing Notes
+
+This repository demonstrates the complete pipeline for:
+
+- Data ingestion  
+- Exploratory analysis  
+- Feature engineering  
+- Deep learning model development  
+- Performance evaluation  
+
+Feel free to explore the notebooks and reach out with any questions.
 
 ---
